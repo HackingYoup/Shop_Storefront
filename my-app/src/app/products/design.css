@@ -1,0 +1,28 @@
+#products-container{
+    display: grid;
+    color: white;
+    background-color: black;
+    grid-template-columns: 33% 33% 33%;
+}
+
+#image{
+    background-color: white;
+    padding: 1;
+    margin-bottom: 5px;
+}
+
+#product{
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#productpage{
+    margin-top: 200px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+
+}
