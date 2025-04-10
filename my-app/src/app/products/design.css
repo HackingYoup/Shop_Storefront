@@ -1,28 +1,74 @@
-#products-container{
+#products-container {
     display: grid;
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     grid-template-columns: 33% 33% 33%;
+    margin: 0px;
 }
 
-#image{
+#image {
     background-color: white;
     padding: 1;
     margin-bottom: 5px;
 }
 
-#product{
-    color: white;
+#product {
+    color: rgb(0, 0, 0);
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-#productpage{
+#productpage {
     margin-top: 200px;
     align-items: center;
+    margin-left: 300px;
     display: flex;
     flex-direction: row;
-    margin-left: 300px;
+}
 
+#title {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 0px;
+}
+
+.button {
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.productlistpage {
+    background-color: rgb(255, 255, 255);
+    min-height: 100%;
+}
+
+#paginationbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#pageproduct{
+    display: flex;
+    flex-direction: row;
+}
+
+#pagenummber{
+    color: rgb(0, 0, 0);
+}
+
+#productdescription>div{
+    margin-bottom: 20px;
+}
+
+.configbuttons>button{
+    margin-right: 5px;
 }
