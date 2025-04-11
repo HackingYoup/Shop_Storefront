@@ -1,23 +1,24 @@
+import { addcartitems, createCart } from "@/actions/Cart"
 import { useShopContext } from "@/context/ShopContext"
 
-const { createcart, addcartItems, deletecartItems, updatecartItems } = require("@/actions/Product")
+const { addcartItems, deletecartItems, updatecartItems } = require("@/actions/Product")
 const { useEffect, useState } = require("react")
 
 const useCart = () => {
-    const {cartstate} = useShopContext()
+    const { cartstate } = useShopContext()
     const [cart, setcart] = cartstate
     const [loading, setloading] = useState(true)
-    useEffect(() => {
-        makecart()
-    }, [])
-    const makecart = async () => {
+    console.log("cartstate", cart)
+    const addcartitem = async (sku, productTypeId) => {
         setloading(true)
-        setcart(await createcart())
-        setloading(false)
-    }
-    const addcartitem = async (sku, quantity) => {
-        setloading(true)
-        setcart(await addcartItems(cart.id, sku, quantity))
+        if (!cart) {
+            const createcart = await createCart(sku, productTypeId)
+            setcart(createcart)
+        } else {
+            const newcart = await addcartitems(cart.id, sku, productTypeId)
+            console.log("newcart", newcart)
+            newcart.items && setcart(newcart)
+        }
         setloading(false)
     }
     const updatecartitem = async (cartId, quantity, itemId) => {

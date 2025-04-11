@@ -61,7 +61,7 @@ const Page = ({ params }) => {
                         </div>
                         <button id="buybutton" onClick={async () => {
                             console.log("product", product)
-                            await addcartitem(product.variants[0].sku, 1)
+                            await addcartitem(product.variants[0].sku, product.type.id)
 
                         }}>
                             add to Cart

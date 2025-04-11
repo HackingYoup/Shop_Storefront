@@ -7,8 +7,8 @@ const Cart = ({ cart }) => {
             <div>Cart</div>
             {cart && cart.items.map((item) => {
                 return (
-                    <div>
-                        <div>{item.product.price.vatIncluded} {item.product.price.currency.symbol}</div>
+                    <div key={item.id}>
+                        <div>{item.price.vatIncluded} {item.price.currency.symbol}</div>
                     </div>
                 )
             })}

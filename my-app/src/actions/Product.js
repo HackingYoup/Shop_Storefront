@@ -49,6 +49,9 @@ export const getproduct = async (productid) => {
       name
       shortDescription
     }
+    type{
+      id
+    }
     variants{
       sku
       size{
