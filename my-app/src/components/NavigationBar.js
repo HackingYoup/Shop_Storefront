@@ -11,12 +11,12 @@ const NavigationBar = () => {
     const clickoutsideref = useClickOutside(() => { setopen(false) })
     const { cart } = useCart()
     return (<div id="NavigationBar">
-        <a href="http://localhost:3000/products">
-            <button className="button">Shop</button>
+        <a href="http://localhost:3000/products" id="shopbutton">
+            Shop
         </a>
-        <button onClick={() => { setopen(!open) }} id="cartopenbutton">NavigationBar</button>
+        <button onClick={() => { setopen(!open) }} id="cartopenbutton">Cart</button>
         <Dialog onClose={() => { }} open={open} className="cartdialog" >
-            <div id="cart" ref={clickoutsideref}>NavigationBar
+            <div id="cart" ref={clickoutsideref}>
                 <button onClick={() => { setopen(false) }} id="closebutton">X</button>
                 <Cart cart={cart}></Cart>
             </div>

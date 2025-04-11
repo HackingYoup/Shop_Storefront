@@ -42,7 +42,7 @@ const Page = ({ params }) => {
                         <div style={{ width: 550 + "px" }}>
                             <h1>{product.name} - {product.type.name}</h1>
                             <div>{product.type.shortDescription}</div>
-                            <div>{product.price.vatIncluded}{product.price.currency.symbol}</div>
+                            <b>{product.price.vatIncluded}{product.price.currency.symbol}</b>
                         </div>
                         <div className="configbuttons">
                             {appearances && Array.from(appearances).map((appearance) => {
@@ -59,12 +59,12 @@ const Page = ({ params }) => {
                                 )
                             })}
                         </div>
-                        <button className="button" onClick={async () => {
+                        <button id="buybutton" onClick={async () => {
                             console.log("product", product)
                             await addcartitem(product.variants[0].sku, 1)
 
                         }}>
-                            Buy
+                            add to Cart
                         </button>
                     </div>
 

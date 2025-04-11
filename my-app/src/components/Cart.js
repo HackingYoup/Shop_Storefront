@@ -12,7 +12,9 @@ const Cart = ({ cart }) => {
                     </div>
                 )
             })}
+            { cart.items.length > 0 &&
             <Link href={`https://highrank.myspreadshop.de/cart/${cart.id}`}>Checkout</Link>
+            }       
         </div>
 
     )
